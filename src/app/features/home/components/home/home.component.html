@@ -1,0 +1,178 @@
+<section class="home" id="app-scroll-container">
+
+  <app-header (connect)="onConnect()" [account]="account" [current]="currentScreen$ | async"></app-header>
+
+  <app-stepper [qty]="4" [current]="currentScreen$ | async" class="d-none d-md-flex"></app-stepper>
+
+  <section observeVisibility [threshold]="0.5" (visible)="onSectionVisible(0, $event)" class="first">
+
+    <div class="first__mobile-bg"></div>
+
+    <div class="first__info">
+      <h1 class="first__title">
+        <span>Banda</span>
+        <span>Panda</span>
+      </h1>
+      <p class="first__text">{{ 'first-screen.desc' | translate }}</p>
+      <button (click)="onStartClick()" class="first__button">{{ 'first-screen.button' | translate }}</button>
+    </div>
+  
+    <figure appParallax [ratio]="0.2" class="first__decor first__decor--1">
+      <img src="/assets/img/decor-1.png" alt="Decor-1" class="w-100">
+    </figure>
+  
+    <figure appParallax [ratio]="0.2" class="first__decor first__decor--2">
+      <img src="/assets/img/decor-2.png" alt="Decor-2" class="w-100">
+    </figure>
+
+    <ng-container *ngIf="(currentScreen$ | async) === 0">
+
+      <figure class="first__decor first__decor--3">
+        <img src="/assets/img/cloud-1.png" alt="Decor-3" class="w-100">
+      </figure>
+    
+      <figure class="first__decor first__decor--4">
+        <img src="/assets/img/cloud-2.png" alt="Decor-4" class="w-100">
+      </figure>
+    
+      <figure class="first__decor first__decor--5">
+        <img src="/assets/img/cloud-3.png" alt="Decor-5" class="w-100">
+      </figure>
+
+      <div *ngFor="let i of 5 | filler" ngClass="{{ 'bird-container--' + i }}" class="bird-container">
+        <div ngClass="{{ 'bird--' + i }}" class="bird"></div>
+      </div>
+      
+    </ng-container>
+
+    <i *ngFor="let i of 4 | filler" ngClass="{{ 'delay-' + i }}" class="first__decor first__decor--7"></i>
+    <i *ngFor="let i of 5 | filler:2" ngClass="{{ 'delay-' + i }}" class="first__decor first__decor--8"></i>
+    <i *ngFor="let i of 5 | filler" ngClass="{{ 'delay-' + i }}" class="first__decor first__decor--9"></i>
+
+  </section>
+  
+  <section observeVisibility [threshold]="0.5" (visible)="onSectionVisible(1, $event)" class="second">
+
+    <figure appParallax [ratio]="0.2" class="second__decor second__decor--1">
+      <img src="/assets/img/butterflies.svg" alt="Butterflies Image" class="w-100">
+    </figure>
+
+    <figure appParallax [ratio]="-0.2" class="second__decor second__decor--2">
+      <img src="/assets/img/palm-2.png" alt="Palm Image">
+    </figure>
+
+    <div class="second__info">
+      <h1 class="second__title">
+        <span>Join The</span>
+        <span>Banda</span>
+      </h1>
+      <app-nft-board></app-nft-board>
+    </div>
+
+  </section>
+
+  <section observeVisibility [threshold]="0.5" (visible)="onSectionVisible(2, $event)" class="third">
+
+    <div class="third__info">
+      <h1 class="third__title">
+        <span>Banda Panda</span>
+        <span><br class="d-flex d-xl-none">Collections</span>
+      </h1>
+      <p class="third__text">{{ 'third-screen.desc' | translate }}</p>
+    </div>
+
+    <figure appParallax [ratio]="-0.3" class="third__decor third__decor--1">
+      <img src="/assets/img/palm-1.png" alt="Palm" class="w-100">
+    </figure>
+
+    <ng-container *ngIf="(currentScreen$ | async) === 2">
+      <i *ngFor="let i of 5 | filler" ngClass="{{ 'delay-' + i }}" class="third__decor third__decor--2"></i>
+      <i *ngFor="let i of 5 | filler:2" ngClass="{{ 'delay-' + i }}" class="third__decor third__decor--3"></i>
+    </ng-container>
+
+  </section>
+
+  <section observeVisibility [threshold]="0.5" (visible)="onSectionVisible(3, $event)" class="fourth">
+
+    <figure appParallax [ratio]="-0.1" class="fourth__decor fourth__decor--1">
+      <img src="/assets/img/panda-floating.png" alt="Floating Panda" class="w-100">
+    </figure>
+
+    <div class="fourth__info">
+
+      <h1 class="fourth__title">
+        <span>Frequently</span>
+        <span><br class="d-flex d-sm-none">Asked Questions</span>
+      </h1>
+
+      <div class="fourth__list-wrap">
+
+        <ul class="fourth__list">
+          <li *ngFor="let item of questions; let isLast = last;">
+            <div class="expandable" [ngClass]="{'mb-rem-2': !isLast}">
+  
+              <header class="pos-relative">
+                <h5 class="expandable__title">{{ item.title | translate }}</h5>
+                <i (click)="item.isExpanded = !item.isExpanded" [ngClass]="{'expandable__icon--expanded': item.isExpanded}" class="expandable__icon"></i>
+              </header>
+          
+              <div [ngSwitch]="item.templateName" [ngClass]="{'expandable__content--expanded': item.isExpanded}" class="expandable__content">
+  
+                <div *ngSwitchCase="'qa.3'" class="w-100 d-flex flex-column">
+                  <p class="expandable__text">{{ 'qa.3.text.1' | translate }}</p>
+                  <ul class="d-flex flex-column mt-rem-1_5">
+                    <li class="expandable__text">- {{ 'qa.3.text.2' | translate }}</li>
+                    <li class="expandable__text">- {{ 'qa.3.text.3' | translate }}</li>
+                    <li class="expandable__text">- {{ 'qa.3.text.4' | translate }}</li>
+                    <li class="expandable__text">- {{ 'qa.3.text.5' | translate }}</li>
+                  </ul>
+                </div>
+  
+                <div *ngSwitchCase="'qa.5'" class="w-100 d-flex flex-column">
+                  <p class="expandable__text">
+                    {{ 'qa.5.text.1' | translate }}
+                    <a href="https://opensea.io/" target="_blank" class="expandable__link">OpenSea.io</a>
+                    {{ 'qa.5.text.2' | translate }}
+                  </p>
+                </div>
+  
+                <div *ngSwitchCase="'qa.6'" class="w-100 d-flex flex-column">
+                  <span class="expandable__text">{{ 'qa.6.text.1' | translate }}</span>
+                  <span class="expandable__text mt-rem-1_75">{{ 'qa.6.text.1' | translate }}</span>
+                  <span class="expandable__text mt-rem-1_75">{{ 'qa.6.text.1' | translate }}</span>
+                </div>
+  
+                <div *ngSwitchCase="'qa.7'" class="w-100 d-flex flex-column">
+                  <p class="expandable__text">{{ 'qa.7.text.1' | translate }}</p>
+                  <p class="expandable__text">{{ 'qa.7.text.2' | translate }}</p>
+                  <p class="expandable__text">
+                    {{ 'qa.7.text.3' | translate }}
+                    <a href="https://opensea.io/" target="_blank" class="expandable__link">discord.gg/4nAFSBmKtS</a>
+                  </p>
+                  <p class="expandable__text">
+                    {{ 'qa.7.text.4' | translate }}
+                    <a href="https://opensea.io/" target="_blank" class="expandable__link">t.me/dbzcoinenglish</a>
+                  </p>
+                </div>
+              
+                <p *ngSwitchDefault class="expandable__text">{{ item.text | translate }}</p>
+  
+              </div>
+  
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <ul *ngIf="(currentScreen$ | async) === 3" class="bubbles-container">
+      <li *ngFor="let i of 15 | filler" [ngClass]="'bubble--' + i" class="bubble"></li>
+    </ul>
+
+    <app-footer class="w-100 z-index-1"></app-footer>
+
+  </section>
+
+</section>

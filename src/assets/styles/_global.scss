@@ -1,0 +1,8 @@
+// Outer styles
+@import '~bootstrap-4-grid/scss/grid.scss';
+
+// Inner styles
+@import '_normalize';
+@import '_core-fonts';
+@import 'mixins/_all';
+@import 'util-classes/_all';

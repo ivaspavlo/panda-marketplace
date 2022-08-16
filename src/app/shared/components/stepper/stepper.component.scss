@@ -1,0 +1,43 @@
+@import 'mixins/_all';
+@import 'core-z-index';
+@import 'core-dimensions';
+
+:host {
+  position: fixed;
+  top: 50%;
+  left: 16px;
+  transform: translateY(calc(-50% + #{$header-height} / 2));
+  z-index: $stepper;
+  // Responsive
+  @include md() {
+    left: 32px;
+  }
+}
+
+.step {
+  @include bg-img('/assets/img/step.svg');
+  width: 32px;
+  height: 32px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  cursor: pointer;
+  &:hover { transform: translateY(-2px); }
+  &:last-of-type { margin-bottom: 0; }
+  &::before {
+    @include bg-img('/assets/img/step-color.svg');
+    width: 19px;
+    height: 19px;
+    display: flex;
+    transform: translate(-1px, -2px);
+    opacity: 0;
+    transition: .3s;
+    content: '';
+  }
+  @include mod('current') {
+    @include bg-img('/assets/img/step.svg');
+    &::before { opacity: 1; }
+  }
+}

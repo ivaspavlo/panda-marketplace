@@ -1,0 +1,13 @@
+// Element
+@mixin elem($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// Modifier
+@mixin mod($element) {
+  &--#{$element} {
+    @content;
+  }
+}

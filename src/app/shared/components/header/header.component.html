@@ -1,0 +1,24 @@
+<section class="app-header">
+  
+  <a routerLink="/" class="app-logo">
+    <figure>
+      <img src="/assets/img/logo-mobile.svg" alt="Logo" class="d-flex d-md-none">
+      <img src="/assets/img/logo.svg" alt="Logo" class="d-none d-md-flex">
+    </figure>
+  </a>
+
+  <nav>
+    <ul class="d-none d-md-flex">
+      <li *ngFor="let item of menuItems; let index = index;">
+        <a (click)="onMenuItemClick(index + 1)" [ngClass]="{'menu-item--current': index === (current - 1)}" class="menu-item">{{ item.uiName | translate }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <button (click)="onConnect()" class="metamask-button">
+    <i class="metamask-button__logo"></i>
+    <span *ngIf="account">{{ account | ellipsis:'6:6' }}</span>
+    <span *ngIf="!account">Connect MetaMask</span>
+  </button>
+
+</section>

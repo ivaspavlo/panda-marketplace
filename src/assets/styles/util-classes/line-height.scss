@@ -1,0 +1,23 @@
+@import "mixins/bem";
+
+.line-height-16 {
+  line-height: 16px;
+  @include lg {
+    line-height: 24px;
+  }
+}
+.line-height-20 {
+  line-height: 20px;
+}
+
+@include sm {
+}
+
+@include md {
+}
+
+@include lg {
+}
+
+@include xl {
+}

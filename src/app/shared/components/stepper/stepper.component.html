@@ -1,0 +1,3 @@
+<ul class="d-flex flex-column">
+  <li (click)="onStepClick(i)" *ngFor="let i of qty | filler:0" [ngClass]="{'step--current': i === current }" class="step"></li>
+</ul>

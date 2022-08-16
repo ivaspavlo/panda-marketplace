@@ -1,0 +1,12 @@
+@import 'mixins/bem';
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

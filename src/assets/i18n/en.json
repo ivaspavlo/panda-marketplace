@@ -1,0 +1,72 @@
+{
+  "core": {
+    "buy": "Buy",
+    "collection": "Collection",
+    "faq": "FAQ",
+    "footer": "© All rights reserved. 2017 - 2021 Banda Panda"
+  },
+  "first-screen": {
+    "button": "Start the journey",
+    "desc": "In the secluded depths of the metaverse, lays an army of Diamond Handed soldiers called The Diamond Boyz Army. The Diamond Boyz Army is a soldier series created and curated by legendary jeweler Johnny Dang to represent the Diamond Boyz, a private club that was until now, exclusively for celebrities and high rollers."
+  },
+  "second-screen": {
+    "ballance": "Ballance",
+    "total-price": "Total Price",
+    "buy-now": "Buy Now"
+  },
+  "third-screen": {
+    "desc": "10,000 high resolution, 3D modeled avatars, ready to wreak havoc. Over 300 unique traits including Diamond Chains, Grillz, Earrings, Weapons, Body Armor, Environments and more!"
+  },
+  "qa": {
+    "0": {
+      "title": "How many members are there in the Diamond Boyz Army?",
+      "text": "There will only ever be 10,000 Diamond Boyz in the genesis collection."
+    },
+    "1": {
+      "title": "How much does each Diamond Boy cost?",
+      "text": "Each member of the Diamond Boyz Army will be minted at 0.07 ETH on minting day."
+    },
+    "2": {
+      "title": "How many Diamond Boyz can be minted?",
+      "text": "To ensure fairness and give everyone an opportunity to participate, you can only mint 20 Diamond Boyz per wallet."
+    },
+    "3": {
+      "title": "Is there a pre-sale?",
+      "text": {
+        "1": "No! Everyone will have the same opportunity to participate in this event.",
+        "2": "No presale",
+        "3": "No premint",
+        "4": "100% randomized",
+        "5": "100% fair"
+      }
+    },
+    "4": {
+      "title": "What is the Smart Contract Address for The Diamond Boyz Army?",
+      "text": "This will be launched on Twitter and Discord on the date of the release."
+    },
+    "5": {
+      "title": "Where can I buy/sell The Diamond Boyz Army?",
+      "text": {
+        "1": "Diamond Boyz Army will only be available on this webiste for minting and will initially be available on",
+        "2": "for buying, selling and trading! Users will later be able to import them to Diamond Swap for all the above features."
+      }
+    },
+    "6": {
+      "title": "What benefits will I receive for holding a Diamond Boyz Army NFT?",
+      "text": {
+        "1": "By joining the army during minting, you can receive special rewards such as jewelry, VIP access to Johnny Dang, passes to the World's 1st Live NFT experience and more!",
+        "2": "Every avatar minted will also receive a FREE airdrop of a non-released NFT for the World's 1st Live NFT Experience.",
+        "3": "After the minting, you will receive a lifetime of rewards. Everything from access to special events, VIP concerts, access to celebrities, voting rights and free airdrops of future NFT's in the series."
+      }
+    },
+    "7": {
+      "title": "What are your social media accounts?",
+      "text": {
+        "1": "Twitter/IG: @DiamondBoyzArmy",
+        "2": "Twitter/IG: @JohnnyDangAndCo",
+        "3": "Discord: ",
+        "4": "Telegram: "
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import 'mixins/_all';
+
+.app-footer {
+  width: 100%;
+  min-height: 44px;
+  background-color: #1E0E35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include elem('text') {
+    font-size: 12px;
+    line-height: 26px;
+    font-family: 'Roboto';
+    color: #BEBEC2;
+  }
+  // Responsive
+  @include md {
+    @include elem('text') { font-size: 16px; }
+  }
+}

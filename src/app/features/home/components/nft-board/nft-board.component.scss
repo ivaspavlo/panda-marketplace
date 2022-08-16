@@ -1,0 +1,170 @@
+@import 'mixins/_all';
+@import 'core-colors';
+
+.nft {
+  width: 370px;
+  height: 342px;
+  position: relative;
+  @include elem('bg-mobile') {
+    width: 100%;
+    display: flex;
+    filter: drop-shadow(11px 7px 37px #000);
+  }
+  @include elem('bg-desktop') {
+    width: 100%;
+    display: none;
+    filter: drop-shadow(11px 7px 37px #000);
+  }
+  @include elem('total') {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FCFF00;
+  }
+  @include elem('amount') {
+    font-size: 18px;
+    line-height: 21px;
+    color: $white;
+  }
+  @include elem('buy-btn') {
+    @include button($bg-url: '/assets/img/button-buy-mobile.png', $height: 48px);
+    width: 161px;
+    &:hover { transform: translateY(-2px); }
+  }
+  @include elem('footer') {
+    width: 100%;
+    padding: 16px 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  @include elem('progress') {
+    @include bg-img($img: '/assets/img/progress-mobile.png', $bg-size: auto);
+    width: 215px;
+    height: 24px;
+    margin-top: 30px;
+  }
+  // Responsive
+  @include lg() {
+    width: 714px;
+    height: 583px;
+    @include elem('progress') { @include bg-img($img: '/assets/img/progress.png', $bg-size: auto); width: 466px; height: 32px; }
+    @include elem('bg-mobile') { display: none; }
+    @include elem('bg-desktop') { display: flex; }
+    @include elem('footer') { padding: 36px 16px; }
+    @include elem('total') { font-size: 24px; line-height: 28px; }
+    @include elem('amount') { font-size: 24px; line-height: 28px; }
+    @include elem('buy-btn') { @include button($bg-url: '/assets/img/button-buy.png', $height: 48px); }
+  }
+}
+
+.board {
+  position: absolute; top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 65px 60px 40px;
+  @include elem('title') {
+    width: 100%;
+    margin-bottom: 14px;
+    font-size: 24px;
+    line-height: 141.5%;
+    display: flex;
+    justify-content: center;
+    color: $white;
+    span { &:nth-child(1) { margin-right: 8px; } }
+  }
+  // Responsive
+  @include lg() {
+    padding: 70px 75px 110px 115px;
+    @include elem('title') { font-size: 32px; line-height: 141.5%; margin-bottom: 24px; }
+  }
+}
+
+.currency {
+  display: flex;
+  margin-bottom: 16px;
+  @include elem('bg') {
+    @include bg-img('/assets/img/currency-bg.png');
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include elem('symbol') {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    &.eth{ @include bg-img('/assets/icons/eth.svg'); }
+  }
+  @include elem('ballance') {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $white;
+  }
+  @include elem('title') {
+    margin-right: 8px;
+    font-size: 24px;
+    line-height: 28px;
+    color: $white;
+  }
+  @include elem('amount') {
+    font-size: 24px;
+    line-height: 28px;
+    color: #FCFF00;
+  }
+  // Responsive
+  @include lg() {
+    margin-bottom: 0;
+    @include elem('bg') { width: 56px; height: 56px; }
+    @include elem('symbol') { width: 32px; height: 32px; }
+    @include elem('title') { margin-right: 4px; }
+    @include elem('amount') { font-size: 24px; line-height: 28px; }
+  }
+}
+
+.controls {
+  display: flex;
+  @include elem('main-btn') {
+    @include button($bg-url: '/assets/img/button-calc-mobile.png', $width: 183px, $height: 48px);
+    flex-shrink: 0;
+    padding: 0 12px;
+    color: #FCFF00;
+    justify-content: space-between;
+    &:hover { color: #FCFF00; }
+  }
+  @include elem('minus') {
+    @include bg-img('/assets/icons/minus.svg');
+    width: 28px;
+    height: 28px;
+    display: flex;
+    transition: .3s;
+    &:hover { transform: translateY(-2px); @include bg-img('/assets/icons/minus-yellow.svg'); }
+  }
+  @include elem('plus') {
+    @include bg-img('/assets/icons/plus.svg');
+    width: 28px;
+    height: 28px;
+    display: flex;
+    transition: .3s;
+    &:hover { transform: translateY(-2px);  @include bg-img('/assets/icons/plus-yellow.svg'); }
+  }
+  @include elem('number') {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @include elem('max-btn') {
+    @include button($bg-url: '/assets/img/button-max.png', $width: 48px, $height: 48px);
+    margin-left: 16px;
+    font-family: 'Baby Panda';
+    &:hover { transform: translateY(-2px); color: #FCFF00; }
+  }
+  // Responsive
+  @include lg() {
+    justify-content: space-between;
+    @include elem('main-btn') {
+      @include button($bg-url: '/assets/img/button-calc.png', $width: 132px, $height: 48px);
+      justify-content: space-between;
+    }
+  }
+}

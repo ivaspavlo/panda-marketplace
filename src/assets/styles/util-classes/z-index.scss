@@ -1,0 +1,17 @@
+@import 'mixins/bem';
+
+.z-index-minus-1 { z-index: -1; }
+.z-index-minus-2 { z-index: -2; }
+.z-index-minus-3 { z-index: -3; }
+
+.z-index-1 { z-index: 1; }
+.z-index-2 { z-index: 2; }
+.z-index-3 { z-index: 3; }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

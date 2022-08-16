@@ -1,0 +1,11 @@
+@import 'mixins/bem';
+
+.hover-opacity { &:hover { opacity: .6; } }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }
